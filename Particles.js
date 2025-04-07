@@ -16,8 +16,8 @@ class FallingParticles{
 
     move(){
         this.y+=this.dy;
-        this.x+=this.dx-randint(this.dx);
-        if((this.y>=particleCanvas.height)||(this.x>=particleCanvas.height)||(this.x-this.img.width<0)){
+        this.x+=this.dx-2*randint(this.dx);
+        if((this.y>=particleCanvas.height)||(this.x>=particleCanvas.width)||(this.x<-this.img.width)){
             return 1;
         }
         return 0;
