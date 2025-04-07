@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity by ShadowFrog Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <h1>Identity by ShadowFrog Studio</h1>
+    <main id="main">
+        <div id="main_menu">
+            <div id="main_menu_buttons_block">
+                <button id="startBtn">Начать</button>
+                <button id="aboutGameBtn">Об игре</button>
+                <button id="aboutUsBtn">О нас</button>
+                <button id="helpBtn">Помощь</button>
+                <button id="sourcersBtn">Исходники</button>
+            </div>
+        </div>
+        <canvas id="game_canvas" height="1080px" width="1920px">
+
+        </canvas>
+        <div id="writter">
+            <p id="nameplace">Aiko</p>
+            <p id="textplace"><br></p>
+        </div>
+        <div id="game_menu">
+            <div id="settings">
+                <button id="screenBtn">На весь экран</button>
+                <button></button>
+                <button></button>
+                <button></button>
+                <button id="settings_return">Вернуться к игре</button>
+
+            </div>
+        </div>
+        <canvas id="particle_canvas" height="1080px" width="1920px">
+
+        </canvas>
+    </main>
+    <div id="helplist">
+        <h2>Управление</h2>
+        <ul>
+            <li><span class="hotkey">"Z", "Пробел"</span> - Продолжить</li>
+            <li><span class="hotkey">"X"</span> - Меню</li>
+            <li><span class="hotkey">"C"</span> - Полный экран</li>
+        </ul>
+    </div>
+    <footer>
+        <p>Created by ShadowFrog Studio</p>
+        <p>General Director: <a href="https://t.me/ShadowFrog2006" target="_blank">ShadowFrog</a></p>
+    </footer>
+    <script src="preparing.js"></script>
+    <script src="Particles.js"></script>
+    <script src="Sprites.js"></script>
+    <script src="rendering.js"></script>
+</body>
+</html>
