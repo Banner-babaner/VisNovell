@@ -98,5 +98,6 @@ window.onload = ()=>{
 }
 
 function randint(end){
-    return Math.random()*end;
+    let res = Math.floor(Math.random()*end);
+    return res;
 }
