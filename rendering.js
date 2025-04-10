@@ -67,29 +67,36 @@ class RenderMaster{
     showParticles(){
         let toDelete = new Array();
         this.particlesField.forEach(element => {
-            console.log(element);
             if(element.move()){
                 toDelete.push(element);
             }
         });
+        for(let i=0; i<this.particlesField.length; i++){
+
+        }
 
         for(let i=0; i<toDelete.length; i++){
             let index = this.particlesField.indexOf(toDelete[i]);
-            this.particlesField = this.particlesField.splice(index, 1);
+            console.log(index);
+            this.particlesField.splice(index, 1);
         }
 
         this.particlesList.forEach(element => {
-            for(let i=0; i<element.concentration;i++){
+            element.concentrated++;
+            if(element.concentrated==element.spawnSpeed){
+                element.concentrated=0;
                 let newPrt = Object.assign({}, element);
-                newPrt.x = randint(particleCanvas.width);
+                newPrt.x = randint(particleCanvas.width-element.img.width);
                 newPrt.move = element.move;
                 this.particlesField.push(newPrt);
             }
+
         });
 
 
         this.particlesField.forEach(element => {
-            pcCtx.drawImage(element.img, element.x, element.y);
+            pcCtx.drawImage(element.img, 0, 0, element.img.width, element.img.height, element.x, element.y, element.img.width*element.size, element.img.height*element.size);
+
         });
 
     }
@@ -100,7 +107,7 @@ class RenderMaster{
         for(let i=0; i<this.mainSpriteList.length; i++){//Отрисовка всех спрайтов
             gcCtx.drawImage(this.mainSpriteList[i].getSkin(), this.mainSpriteList[i].x, this.mainSpriteList[i].y);
         }
-        //Отрисовка частиц пока не пока добавленa
+        //Отрисовка частиц
         this.showParticles();
     }
 
